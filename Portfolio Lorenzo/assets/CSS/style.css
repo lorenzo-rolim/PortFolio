@@ -1,0 +1,473 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    line-height: 1.4;
+}
+img{
+    max-width: 100%;
+}
+.container{
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 1em;
+    padding-left: 1em;
+    width: 90%;
+}
+
+/* HEADER NAV */
+
+.header{
+    background-color: white;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    position: fixed;
+    z-index: 2;
+}
+.header_title{
+    text-decoration: none;
+    display: block;
+    font-weight: 600;
+    color: rgb(6, 102, 109);
+    padding: 10px;
+    font-size: 20px;
+    margin-left: 30px;
+    float: left;
+}
+.header_nav{
+    clear: left;
+}
+.ul_nav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ul_nav li{
+    padding: 15px;
+    text-align: center;
+    background-color: rgb(4, 70, 75);
+    border-bottom: 1px solid white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in;
+}
+.ul_nav li:hover{
+    background-color: rgb(6, 102, 109);
+}
+.ul_nav li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    padding: 0;
+    
+}
+
+.js .header__btnMenu{
+    float: right;
+    background-color: transparent;
+    border: none;
+    margin: 0.4em;
+    cursor: pointer;
+    color: rgb(4, 70, 75);
+}
+.js .header_nav{
+    transition: max-height 0.7s ease;
+}
+/* HERO CONTENT */
+
+.hero_content{
+    margin-top: 90px;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "h1 p"
+                         "i  p" 
+    ;
+}
+.hero_content h1{
+    margin-top: 25%;
+    color: rgb(6, 102, 109);
+    font-size: 30px;
+    font-weight: semi-bold;
+    grid-area: h1;
+}
+.name_color{
+    color: rgb(0, 64, 68);
+}
+.hero_git, .hero_linke{
+    margin-left: 10px;
+}
+.fa-github, .fa-linkedin-in, .fa-instagram{
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+.fa-github:hover, .fa-linkedin-in:hover, .fa-instagram:hover{
+    color: rgb(49, 221, 233);
+}
+.hero_icons{
+    margin-top: 30%;
+    grid-area: i;
+    color: rgb(6, 102, 109);
+}
+.hero_icons a:visited{
+    color: rgb(6, 102, 109);
+}
+.hero_img img{
+    margin-top: 25%;
+    margin-left: 20%;
+    width: 90%;
+    border-radius: 15px;
+}
+.hero_img{
+    grid-area: p;
+}
+
+
+/* SOBRE MIM */
+
+.about_content{
+    width: 100%;
+    overflow-x: hidden;
+    margin: auto;
+    color: rgb(0, 64, 68);
+    margin-bottom: 80px;
+}
+.about_title{
+    position: relative;
+    margin-top: 150px;
+    text-align: center;
+}
+.about_title::after{
+    content: "";
+    position: absolute;
+    top: 100%; /* posição da linha abaixo do texto relativa a altura do pai */
+    left: 40%;
+    width: 20%; /* comprimento da linha relativa ao tamanho do texto */
+    height: 3px; /* altura da linha relativa ao valor da font do pai */
+    background-color: rgb(0, 64, 68);
+}
+
+.about_grid{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "p1 p1"
+                         "p2 p2"
+    ;
+}
+.about_content p{
+    text-align: center;
+    font-weight: 300;
+}
+.about_content p:nth-child(1){
+    grid-area: p1;
+    margin-right: 25%;
+}
+.about_content p:nth-child(2){
+    grid-area: p2;
+    margin-left: 25%;
+}
+
+
+/* Inspirações e Quote Container */
+.quote_container{
+    color: rgb(255, 255, 255);
+}
+.quote_title{
+    text-align: center;
+    position: relative;
+    color: rgb(0, 64, 68);
+}
+.quote_title::after{
+    content: "";
+    position: absolute;
+    top: 110%; 
+    left: 40%;
+    width: 20%; 
+    height: 3px; 
+    background-color: rgb(0, 64, 68);
+}
+.quote_slideshow{
+    font-weight: 300;
+    font-style: italic;
+}
+.quote_slideshow figure{
+    margin: auto;
+    text-align: center;
+}
+.quote_slideshow figcaption{
+    text-align: right;
+    margin-right: 10vh;
+
+}
+.js .quote_container{
+    box-sizing: border-box;
+}
+.js .quote_slideshow{
+    margin: auto;
+    position: relative;
+    box-sizing: border-box;
+}
+.js .quote_slideshow figure h2{
+    margin-top: 0;
+}
+.js .quote_slideshow figure{
+    opacity: 0;
+    transition: 1s opacity;
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 50px;
+    right: 50px;
+    margin: 0;
+}
+.js .quote_container .next, .js .quote_container .prev{
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+}
+.js .quote_container .next{
+    right: 0px;
+}
+.js .quote_container .prev{
+    left: 0px;
+}
+.js .quote_slideshow figure.show{
+    opacity: 1;
+    position: static;
+
+}
+/* Skills */
+
+.progress{
+    color: rgb(0, 64, 68);
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.progress h2{
+    text-align: center;
+    position: relative;
+}
+
+.progress h2::after{
+    content: "";
+    position: absolute;
+    top: 110%; 
+    left: 47%;
+    width: 6%; 
+    height: 3px; 
+    background-color: rgb(0, 64, 68);
+}
+.skill_container{
+    margin: auto;
+    position: relative;
+    margin-top: 40px;
+    width: 90%;
+    box-shadow: 0 0 1em 1px rgb(185, 185, 185);
+    height: 50px;
+    border-radius: 20px;
+}
+.skill_title{
+    font-size: 20px;
+    font-weight: 300;
+    position: absolute;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 90px;
+    padding-bottom: 50px;
+}
+.skill_porcentage{
+    position: absolute;
+    margin-left: 85%;
+    margin-top: 15px;
+}
+.fa-js, .fa-css3-alt, .fa-html5{
+    position: absolute;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.progress_container{
+    position: absolute;
+    height: 2px;
+    width: 94%;
+    margin-top: 48px;
+    margin-left: 15px;
+    border-radius: 20%;
+}
+.progress_bar1{
+    height: 100%;
+    position: absolute;
+    background-color: rgb(0, 64, 68);
+    width: 10px;
+    animation: barra-progresso1 2s forwards ease;
+}
+.progress_bar2{
+    height: 100%;
+    position: absolute;
+    background-color: rgb(0, 64, 68);
+    width: 10px;
+    animation: barra-progresso2 2s forwards ease;
+}
+.progress_bar3{
+    height: 100%;
+    position: absolute;
+    background-color: rgb(0, 64, 68);
+    width: 10px;
+    animation: barra-progresso3 2s forwards ease;
+}
+@keyframes barra-progresso1{
+    0% { width: 0%; } 
+    100% { width: 90%}
+}
+@keyframes barra-progresso2{
+    0% { width: 0%; } 
+    100% { width: 70%}
+}
+@keyframes barra-progresso3{
+    0% { width: 0%; } 
+    100% { width: 45%}
+}
+
+/* Footer */
+
+.footer_content{
+    height: 30vh;
+    border-top: 8px solid rgb(0, 35, 37);
+    background-color: rgb(0, 64, 68);
+    display: inline-block;
+    width: 100%;
+}
+.footer_title{
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    font-weight: 400;
+    font-style: italic;
+}
+.footer_content address{
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    font-weight: 400;
+    font-style: italic;
+}
+.inst_footer, .git_footer, .linkedin_footer{
+    color: white;
+    margin-top: 30px;
+    font-weight: 300;
+    margin-top: 3vh;
+}
+.linkedin_footer{
+    margin-right: 25px;
+    margin-left: 25px;
+}
+.footer_icons{
+    display: flex;
+    justify-content: center;
+}
+.footer_content h2{
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 41px;
+}
+@media screen and (min-width: 100px){
+    .js .quote_bg{
+        background-color: rgb(0, 64, 68);
+        border-bottom: 8px solid rgb(0, 35, 37);
+        padding: 0px;
+        box-sizing: border-box;
+    }
+}
+@media screen and (min-width: 360px){
+    .hero_img img{
+        margin-top: 25%;
+        margin-left: 20%;
+        width: 90%;
+        border-radius: 15px;
+    }
+
+}
+@media screen and (min-width: 1025px){
+    .header{
+        border-bottom: none;
+        box-shadow: 1px 1px 4px 0.1px rgb(185, 185, 185);
+        position: fixed;
+        z-index: 2;
+    }
+    .header_nav{
+        clear: none;
+    }
+    .header_title{
+        margin-top: 15px;
+        margin-left: 60px;
+        font-size: 20px;
+    }
+    .ul_nav{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: right;
+        padding: 0px;
+        margin-right: 80px;
+    }
+    .ul_nav li{
+        display: inline-block;
+        background-color: white;
+    }
+    .header__btnMenu{
+        display: none;
+    }
+    .ul_nav li:hover{
+        background-color: white;
+    }
+    .ul_nav li a{
+        color: rgb(0, 64, 68);
+        font-size: 18px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        display: block;
+        padding: 12px;
+    }
+    .ul_nav li a:hover{
+        color: rgb(0, 162, 173)
+    }
+    /* hero content */
+
+    .hero_content h1{
+        font-size: 40px;
+    }
+    .hero_img img{
+        width: 70%;
+        margin-left: 30%;
+    }
+    .hero_icons{
+        margin-top: 25%;
+        font-size: 30px;
+    }
+    .about_content p:nth-child(1){
+        grid-area: p1;
+        margin-right: 40%;
+    }
+    .about_content p:nth-child(2){
+        grid-area: p2;
+        margin-left: 50%;
+    }
+    /* Quote Container */
+    .js .quote_bg{
+        background-color: rgb(0, 64, 68);
+        border-bottom: 8px solid rgb(0, 35, 37);
+        padding: 90px;
+        box-sizing: border-box;
+    }
+}
