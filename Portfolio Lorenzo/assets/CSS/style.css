@@ -92,7 +92,7 @@ img{
 .hero_content h1{
     margin-top: 25%;
     color: rgb(6, 102, 109);
-    font-size: 30px;
+    font-size: 22px;
     font-weight: semi-bold;
     grid-area: h1;
 }
@@ -110,12 +110,12 @@ img{
 .fa-github:hover, .fa-linkedin-in:hover, .fa-instagram:hover{
     color: rgb(49, 221, 233);
 }
-.hero_icons{
+.hero_icones{
     margin-top: 30%;
     grid-area: i;
     color: rgb(6, 102, 109);
 }
-.hero_icons a:visited{
+.hero_icones a:visited{
     color: rgb(6, 102, 109);
 }
 .hero_img img{
@@ -210,12 +210,13 @@ img{
     box-sizing: border-box;
 }
 .js .quote_slideshow{
-    margin: auto;
     position: relative;
-    box-sizing: border-box;
+    
 }
 .js .quote_slideshow figure h2{
     margin-top: 0;
+    text-align: center;
+    font-size: 20px;
 }
 .js .quote_slideshow figure{
     opacity: 0;
@@ -224,14 +225,12 @@ img{
     position: absolute;
     box-sizing: border-box;
     top: 0;
-    left: 50px;
-    right: 50px;
     margin: 0;
 }
 .js .quote_container .next, .js .quote_container .prev{
-    z-index: 10;
+    z-index: 1;
     position: absolute;
-    top: 50%;
+    top: 65%;
     cursor: pointer;
 }
 .js .quote_container .next{
@@ -243,6 +242,7 @@ img{
 .js .quote_slideshow figure.show{
     opacity: 1;
     position: static;
+    box-sizing: border-box;
 
 }
 /* Skills */
@@ -385,8 +385,11 @@ img{
     .js .quote_bg{
         background-color: rgb(0, 64, 68);
         border-bottom: 8px solid rgb(0, 35, 37);
-        padding: 0px;
+        padding: 100px 0px;
         box-sizing: border-box;
+    }
+    .hero_icones a:visited{
+        color: rgb(6, 102, 109);
     }
 }
 @media screen and (min-width: 360px){
@@ -451,7 +454,7 @@ img{
         width: 70%;
         margin-left: 30%;
     }
-    .hero_icons{
+    .hero_icones{
         margin-top: 25%;
         font-size: 30px;
     }
@@ -464,10 +467,33 @@ img{
         margin-left: 50%;
     }
     /* Quote Container */
+    .js .quote_container .next, .js .quote_container .prev{
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        cursor: pointer;
+    }
     .js .quote_bg{
         background-color: rgb(0, 64, 68);
         border-bottom: 8px solid rgb(0, 35, 37);
         padding: 90px;
         box-sizing: border-box;
     }
+    
+}
+/* ScrollReveal */
+
+[data-anime] {
+    opacity: 0;
+    transition: 0.7s ease;
+}
+[data-anime="left"] {
+    transform: translate3d(0, -100px, 0);
+}
+[data-anime="right"] {
+    transform: translate3d(0, -100px, 0);
+}
+[data-anime].animate{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
